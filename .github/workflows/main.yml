@@ -42,7 +42,7 @@ jobs:
 
       - name: Create SSH Key
         run: |
-          echo "$SSH_PRIVATE_KEY" >  private.key
+          echo "$SSH_PRIVATE_KEY" > private.key
           sudo chmod 400 private.key
           eval `ssh-agent -s`
           ssh-add private.key
@@ -57,7 +57,7 @@ jobs:
           sudo apt-get install ansible -y
       - name: Create Inventory File
         run: |
-          echo "webnode1 ansible_host=$TARGET_HOST ansible_user=$SSH_USER ansible_ssh_private_key_file=$private.key" > inventory
+          echo "webnode1 ansible_host=$TARGET_HOST ansible_user=$SSH_USER ansible_ssh_private_key_file=private.key" > inventory
 
       - name: Deploy With Ansible
         run: |
