@@ -37,7 +37,7 @@
     - name: Login to Docker hub with token
       docker_login:
         username: "{{ DOCKERHUB_USERNAME }}"
-        password: "{{ DOCKERHUB_PASSWORD }}"
+        password: "{{ DOCKERHUB_TOKEN }}"
 
     - name: Pull Next.js Docker image
       docker_image:
